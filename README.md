@@ -30,7 +30,7 @@ pm.test('query params are returned in the response body', () => {
 });
 ```
 
-> Note: The `debugger` statement will have no effect during normal operation of Postman, the Postman Collection Runner, and newman.  It only fires a breakpoint when executing inside a debug session.
+> Note: The `debugger` statement will have no effect during normal operation of Postman, the Postman    ner, and newman.  It only fires a breakpoint when executing inside a debug session.
 
 Once a `debugger` statement is added to the script, save the request, and access the collection how you would with newman today: either by [exporting the collection](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#exporting-collections) or [using the Postman API](https://github.com/postmanlabs/newman#using-newman-with-the-postman-api). 
 
@@ -43,7 +43,7 @@ The launch configuration provided in [.vscode/launch.json](https://github.com/ke
 To debug directly in your terminal, run:
 
 ```
-node inspect ./node_modules/.bin/newman run collection.json --script-timeout 1800000
+node inspect ./node_modules/.bin/newman run collection.json -- --script-timeout 1800000
 ```
 
 Example debug session:
