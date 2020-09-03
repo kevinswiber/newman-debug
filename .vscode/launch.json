@@ -4,19 +4,88 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        // Launch newman (npm test)
+        // This configuration launches `npm test` and attaches the debugger.
+        // The test script in this Node.js package executes a
+        // locally-installed newman instance.
         {
-            "name": "Debug newman",
+            "name": "Launch newman (npm test)",
             "request": "launch",
             "runtimeArgs": [
                 "run-script",
                 "test",
-                "--timeout-script 1800000"
+                "--",
+                "--timeout-script",
+                "1800000"
             ],
             "runtimeExecutable": "npm",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "type": "pwa-node"
+            "type": "node"
+        },
+        // Launch newman (bin)
+        // This configuration launches a locally-installed newman
+        // and attaches the debugger.
+        {
+            "name": "Launch newman (bin)",
+            "program": "${workspaceFolder}/node_modules/.bin/newman",
+            "args": [
+                "run",
+                "collection.json",
+                "--timeout-script",
+                "1800000"
+            ],
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        },
+        // Launch newman (global)
+        // This configuration launches a globally-installed newman
+        // instance and attaches the debugger.
+        {
+            "name": "Launch newman (global)",
+            "request": "launch",
+            "runtimeArgs": [
+                "run",
+                "collection.json",
+                "--timeout-script",
+                "1800000"
+            ],
+            "runtimeExecutable": "newman",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        },
+        // Launch newman (global, prompt)
+        // This configuration launches a globally-installed newman
+        // after prompting for the path to the Postman collection JSON file
+        // and attaches the debugger.
+        {
+            "name": "Launch newman (global, prompt)",
+            "request": "launch",
+            "runtimeArgs": [
+                "run",
+                "${input:postmanCollectionJSON}",
+                "--timeout-script",
+                "1800000"
+            ],
+            "runtimeExecutable": "newman",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "postmanCollectionJSON",
+            "type": "promptString",
+            "default": "collection.json",
+            "description": "The path to the Postman collection JSON file."
         }
     ]
 }

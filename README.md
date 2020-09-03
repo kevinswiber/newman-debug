@@ -36,7 +36,21 @@ Once a `debugger` statement is added to the script, save the request, and access
 
 ### Debugging in Visual Studio Code
 
-The launch configuration provided in [.vscode/launch.json](https://github.com/kevinswiber/newman-debug/blob/main/.vscode/launch.json) contains a single configuration named `Debug newman`.  This can be launched from VS Code's Run view.  See [Debugging in Visual Studio Code](https://code.visualstudio.com/docs/editor/debugging) for more information.
+The `launch.json` file provided here ([.vscode/launch.json](https://github.com/kevinswiber/newman-debug/blob/main/.vscode/launch.json)) presents different configurations for launching newman.
+
+#### Configurations
+
+* Launch newman (npm test)
+  * Runs `npm test` and attaches the debugger. The test script in this Node.js package executes a locally-installed newman instance.
+* Launch newman (bin)
+  * Runs a locally-installed newman and attaches the debugger
+* Launch newman (global)
+  * Runs a globally-installed newman instance and attaches the debugger.
+* Launch newman (global, prompt)
+  * Runs a globally-installed newman after prompting for the path to the Postman collection JSON file and attaches the debugger.
+
+
+See [Debugging in Visual Studio Code](https://code.visualstudio.com/docs/editor/debugging) for more information.
 
 ### Debugging with the Node.js debugging client
 
