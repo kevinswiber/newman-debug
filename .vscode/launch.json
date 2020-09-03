@@ -10,6 +10,7 @@
         // locally-installed newman instance.
         {
             "name": "Launch newman (npm test)",
+            "console": "integratedTerminal",
             "request": "launch",
             "runtimeArgs": [
                 "run-script",
@@ -29,6 +30,7 @@
         // and attaches the debugger.
         {
             "name": "Launch newman (bin)",
+            "console": "integratedTerminal",
             "program": "${workspaceFolder}/node_modules/.bin/newman",
             "args": [
                 "run",
@@ -47,6 +49,7 @@
         // instance and attaches the debugger.
         {
             "name": "Launch newman (global)",
+            "console": "integratedTerminal",
             "request": "launch",
             "runtimeArgs": [
                 "run",
@@ -66,6 +69,7 @@
         // and attaches the debugger.
         {
             "name": "Launch newman (global, prompt)",
+            "console": "integratedTerminal",
             "request": "launch",
             "runtimeArgs": [
                 "run",
