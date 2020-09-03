@@ -30,6 +30,10 @@ pm.test('query params are returned in the response body', () => {
 });
 ```
 
+> Note: The `debugger` statement will have no effect during normal operation of Postman, the Postman Collection Runner, and newman.  It only fires a breakpoint when executing inside a debug session.
+
+Once a `debugger` statement is added to the script, save the request, and access the collection how you would with newman today: either by [exporting the collection](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#exporting-collections) or [using the Postman API](https://github.com/postmanlabs/newman#using-newman-with-the-postman-api). 
+
 ### Debugging in Visual Studio Code
 
 The launch configuration provided in [.vscode/launch.json](https://github.com/kevinswiber/newman-debug/blob/main/.vscode/launch.json) contains a single configuration named `Debug newman`.  This can be launched from VS Code's Run view.  See [Debugging in Visual Studio Code](https://code.visualstudio.com/docs/editor/debugging) for more information.
