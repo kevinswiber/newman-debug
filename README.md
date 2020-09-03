@@ -43,13 +43,13 @@ The launch configuration provided in [.vscode/launch.json](https://github.com/ke
 To debug directly in your terminal, run:
 
 ```
-node inspect ./node_modules/.bin/newman run collection.json -- --script-timeout 1800000
+node inspect ./node_modules/.bin/newman run collection.json --timeout-script 1800000
 ```
 
 Example debug session:
 
 ```
-$ node inspect ./node_modules/.bin/newman run collection.json -- --script-timeout 1800000
+$ node inspect ./node_modules/.bin/newman run collection.json --timeout-script 1800000
 < Debugger listening on ws://127.0.0.1:9229/e7249c52-c382-42d3-b79e-66f391f3e2c3
 < For help, see: https://nodejs.org/en/docs/inspector
 < Debugger attached.
