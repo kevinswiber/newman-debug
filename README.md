@@ -1,6 +1,6 @@
 # newman-debug
 
-A guide on how to debug [Postman](https://www.postman.com) collection runs with [newman](https://learning.postman.com/docs/running-collections/using-newman-cli/command-line-integration-with-newman/).
+A guide on how to debug [Postman](https://www.postman.com) collection scripts with [newman](https://learning.postman.com/docs/running-collections/using-newman-cli/command-line-integration-with-newman/).
 
 Feel free to clone this repository to walk through an example:
 
