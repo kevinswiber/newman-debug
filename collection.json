@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "722f7cf6-78f5-4a7a-a527-e436e84dfb73",
+		"name": "newman-debug",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET /get",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a534d498-afc2-458c-81fd-2cb69fb02fc7",
+						"exec": [
+							"pm.test('response status is 200 OK', () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test('query params are returned in the response body', () => {",
+							"    const subject = {",
+							"        foo: 'hello',",
+							"        bar: 'world'",
+							"    };",
+							"",
+							"    debugger;",
+							"    const response = pm.response.json();",
+							"",
+							"    pm.expect(response.args).to.eql(subject);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get?foo=hello&bar=world",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "foo",
+							"value": "hello"
+						},
+						{
+							"key": "bar",
+							"value": "world"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,14 @@
+{
+  "name": "newman-debug",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Debug Newman runs locally.",
+  "scripts": {
+    "test": "newman run collection.json"
+  },
+  "author": "Kevin Swiber <kswiber@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "newman": "^5.2.0"
+  }
+}
