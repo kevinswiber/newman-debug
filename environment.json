@@ -1,0 +1,13 @@
+{
+	"id": "cbe89e50-cb71-41c6-86c4-a898a10a86b6",
+	"name": "newman-debug",
+	"values": [
+		{
+			"key": "baseUrl",
+			"value": "https://api.github.com",
+			"type": "text",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment"
+}

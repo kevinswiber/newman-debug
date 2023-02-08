@@ -83,6 +83,24 @@
             ],
             "type": "node"
         }
+        ,{
+            "name": "Newman (global, prompt for collection and environment)",
+            "console": "integratedTerminal",
+            "request": "launch",
+            "runtimeArgs": [
+                "run",
+                "${input:postmanCollectionJSON}",
+                "-e",
+                "${input:postmanEnvironmentJSON}",
+                "--timeout-script",
+                "1800000"
+            ],
+            "runtimeExecutable": "newman",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        }
     ],
     "inputs": [
         {
@@ -90,6 +108,12 @@
             "type": "promptString",
             "default": "collection.json",
             "description": "The path to the Postman collection JSON file."
+        }
+        ,{
+            "id": "postmanEnvironmentJSON",
+            "type": "promptString",
+            "default": "environment.json",
+            "description": "The path to the Postman environment JSON file."
         }
     ]
 }
